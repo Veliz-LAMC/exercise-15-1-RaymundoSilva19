@@ -170,3 +170,36 @@ footer p {
 	color: white;
 	padding: 1em 0;
 }
+
+/* Transition for Images in Aside */
+aside img {
+    transition: transform 2s;
+}
+aside img:hover {
+    transform: translate(100px, 20px);
+}
+
+/* Transition with Transform for Speaker Image */
+article img {
+    transition: transform 3s;
+    transform-origin: 0 0; /* Upper left corner */
+}
+article img:hover {
+    transform: rotate(720deg);
+}
+
+/* Animation with Transform for Images in Aside */
+@keyframes moveImages {
+    0% {
+        transform: translate(0, 0) scale(1);
+    }
+    50% {
+        transform: translate(100px, 20px) scale(1.4);
+    }
+    100% {
+        transform: translate(0, 0) scale(1);
+    }
+}
+aside img {
+    animation: moveImages 3s ease-in-out 2s 2 alternate;
+}
